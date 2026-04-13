@@ -16,7 +16,7 @@ def delete_task(index):
         print(f"Deleted: {removed}")
     else:
         print("Invalid index")
-
+        
 while True:
     print("\nWhat would you like to do?")
     print("1. Add Task")
@@ -46,3 +46,12 @@ while True:
 
     else:
         print("Invalid choice")
+
+n = str(task)
+
+with open("tasks.txt", "a") as f:
+    f.write(n + "\n")
+
+with open("tasks.txt", "r") as f:
+    tasks = f.readlines()
+    print(tasks,end=" ")
